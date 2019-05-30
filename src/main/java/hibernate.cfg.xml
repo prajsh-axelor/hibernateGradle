@@ -22,7 +22,18 @@
 		<!--  Echo all executed SQL to stdout  -->
 		<property name="show_sql">true</property>
 		
-		<property name="hibernate.current_session_context_class">thread</property> 
-					
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<!-- 
+		<mapping class="TablesFromEntityClasses.Department" />
+		<mapping class="TablesFromEntityClasses.Employee" />
+		<mapping class="TablesFromEntityClasses.SalaryGrade" />
+		<mapping class="TablesFromEntityClasses.TimeKeeper" />
+		 -->
+		<!-- 
+		<property name="cache.providerclass">org.hibernate.NoCacheProvider</property>
+		  <mapping class="com.ajo.common.db_TestTable"/>
+			 -->
+			 		
 	</session-factory>
 </hibernate-configuration>

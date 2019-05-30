@@ -4,7 +4,7 @@
 		<!--  Database connection settings  -->
 		
 		<property name="connection.driver_class">org.postgresql.Driver</property>
-		<property name="connection.url">jdbc:postgresql://localhost:5432/hb_student_tracker</property>
+		<property name="connection.url">jdbc:postgresql://localhost:5432/mappingdb</property>
 		
 		<property name="connection.username">axelor</property>
 		<property name="connection.password">axelor</property>
@@ -30,10 +30,7 @@
 		<mapping class="TablesFromEntityClasses.SalaryGrade" />
 		<mapping class="TablesFromEntityClasses.TimeKeeper" />
 		 -->
-		<!-- 
-		<property name="cache.providerclass">org.hibernate.NoCacheProvider</property>
-		  <mapping class="com.ajo.common.db_TestTable"/>
-			 -->
+		
 			 		
 	</session-factory>
 </hibernate-configuration>
