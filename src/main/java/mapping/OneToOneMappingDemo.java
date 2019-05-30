@@ -1,5 +1,8 @@
 package mapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -19,7 +22,7 @@ public class OneToOneMappingDemo {
 		
 		try {
 		
-		Instructor tempInstructor = new Instructor("parry", "the platipus", "parrytheplatipus@spy.com");
+		Instructor tempInstructor = new Instructor("parryyy", "the platipus", "parrytheplatipus@spy.com");
 		InstructorDetail tempInstructorDetail = new InstructorDetail("sypretro","mystry solving");
 		
 		tempInstructor.setInstructorDetail(tempInstructorDetail);

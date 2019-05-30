@@ -23,30 +23,26 @@ public class MainDemo {
 		
 		session.beginTransaction();
 		
-		int id = 2;
+		int id = 3;
 		
 		InstructorDetail instD = session.get(InstructorDetail.class, id);
 		
-		System.out.println(instD+"\n"+instD.getInstructor());
+		System.out.println("1"+ instD+"\n"+instD.getInstructor());
 		
-//		session.delete(instD);
+		session.delete(instD);
 		
-		Query q = session.createQuery("delete from InstructorDetail where hobby=:m");
-		q.setParameter("m", "mystry solving");
-		q.executeUpdate();
+//		session.createQuery("delete from InstructorDetail where hobby=:m").executeUpdate();
 		
-//		session.createQuery(m).executeUpdate();
-			
+		System.out.println("2"+instD+"\n"+instD.getInstructor());
+		
 		session.getTransaction().commit();
 		
+		System.out.println("3"+instD+"\n"+instD.getInstructor());
 //		System.out.println(inst+"\n"+inst.getInstructorDetail());
 		
 		System.out.print("Done!!");
 		
-		} catch (Exception E) {
-			System.out.println(E.getMessage());
-		}
-		finally {
+		} finally {
 			factory.close();
 		}
 
