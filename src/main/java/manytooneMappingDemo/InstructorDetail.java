@@ -1,4 +1,4 @@
-package mapping;
+package manytooneMappingDemo;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -6,14 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="instructor_detail")
 public class InstructorDetail {
-
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -25,7 +24,13 @@ public class InstructorDetail {
 	@Column(name="hobby")
 	private String hobby;
 	
-	@OneToOne(mappedBy="instructorDetail", cascade=CascadeType.ALL)
+	// add new field for instructor (also add getter/setters)
+	
+	// add @OneToOne annotation
+	
+	@OneToOne(mappedBy="instructorDetail", 
+			cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+						CascadeType.REFRESH})
 	private Instructor instructor;
 
 	
@@ -76,3 +81,10 @@ public class InstructorDetail {
 	}
 		
 }
+
+
+
+
+
+
+

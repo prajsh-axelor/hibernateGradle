@@ -23,23 +23,24 @@ public class MainDemo {
 		
 		session.beginTransaction();
 		
-		int id = 3;
+		int id = 12;
+		
+//		Instructor inst = session.get(Instructor.class, id);
+//		if(inst != null) {
+//			System.out.println();
+//			session.delete(inst);
+//		}
+		
 		
 		InstructorDetail instD = session.get(InstructorDetail.class, id);
-		
-		System.out.println("1"+ instD+"\n"+instD.getInstructor());
-		
-		session.delete(instD);
+		if(instD != null) {
+			System.out.println("1"+ instD+"\n"+instD.getInstructor());
+			session.delete(instD);
+		}
 		
 //		session.createQuery("delete from InstructorDetail where hobby=:m").executeUpdate();
 		
-		System.out.println("2"+instD+"\n"+instD.getInstructor());
-		
 		session.getTransaction().commit();
-		
-		System.out.println("3"+instD+"\n"+instD.getInstructor());
-//		System.out.println(inst+"\n"+inst.getInstructorDetail());
-		
 		System.out.print("Done!!");
 		
 		} finally {
