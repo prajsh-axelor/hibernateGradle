@@ -1,6 +1,5 @@
 package manytooneMappingDemo;
 
-import manytooneMappingEntity.*;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -3,6 +3,7 @@ package manytooneMappingDemo;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +23,7 @@ public class Course {
 	@Column(name="title")
 	private String title;
 	
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+	@ManyToOne(fetch=FetchType.LAZY ,cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 						 CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinColumn(name="instructor_id")
 	private Instructor instructor;
